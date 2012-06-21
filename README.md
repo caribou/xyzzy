@@ -11,11 +11,12 @@ XYZZY, the original source of all power.  This is the route we take here.
 
 ```clj
 (require '[xyzzy.core :as xyzzy])
-(def blob (xyzzy/parse-xml giant-xml-string))
-(xyzzy/text-at blob :keys :into :blob :at :the :path :you :desire)
+
+(let [blob (xyzzy/parse-xml giant-xml-string)]
+  (xyzzy/text-at blob :keys :into :the :blob :at :the :path :you :desire))
 ```
 
-Need at attribute, not the text value?  Use xyzzy/attr-at!
+Need an attribute, not the text value?  Use xyzzy/attr-at!
 
 ## License
 
